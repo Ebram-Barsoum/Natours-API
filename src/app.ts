@@ -47,6 +47,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // MIDDLEWARES
+app.set("trust proxy", 1); //allow 1 proxy for railway deployment
 app.use("/api", apiLimiter); // limit requests from same IP
 app.use(helmet()); // set security HTTP headers
 app.use(express.json()); // body parser
