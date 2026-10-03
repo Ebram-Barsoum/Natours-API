@@ -49,7 +49,7 @@ const __dirname = path.dirname(__filename);
 
 // IMPLEMENT CORS: this add Access-Control-Allow-Origin to * to allow consuming the API from anywhere
 app.use(cors());
-app.options("/*spalt", cors());
+app.options("/*splat", cors());
 
 // MIDDLEWARES
 app.set("trust proxy", 1); //allow 1 proxy for railway deployment
