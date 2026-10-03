@@ -7,6 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
+import cors from "cors";
 
 import AppError from "./utils/appError";
 
@@ -45,6 +46,10 @@ const app = express();
 // Recreate __dirname in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// IMPLEMENT CORS: this add Access-Control-Allow-Origin to * to allow consuming the API from anywhere
+app.use(cors());
+app.options("/*spalt", cors());
 
 // MIDDLEWARES
 app.set("trust proxy", 1); //allow 1 proxy for railway deployment
