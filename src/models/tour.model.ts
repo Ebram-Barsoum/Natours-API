@@ -130,7 +130,7 @@ const tourSchema = new mongoose.Schema(
           ret.imageCover = `${process.env.BASE_URL}/uploads/tours/${ret.imageCover}`;
         }
 
-        if ((ret.images as []).length > 0) {
+        if ((ret.images as [])?.length > 0) {
           ret.images = (ret.images as []).map(
             (img: string) =>
               (img = `${process.env.BASE_URL}/uploads/tours/${img}`),
