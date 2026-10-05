@@ -304,8 +304,8 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/natours.git
-   cd natours
+   git clone https://github.com/Ebram-Barsoum/Natours-API.git
+   cd Natours-API
    ```
 
 2. **Install dependencies**
@@ -334,7 +334,7 @@ STRIPE_WEBHOOK_SECRET=whsec_...
    ```bash
    npm run dev
    ```
-   The API will be available at `http://localhost:3001`.
+   The API will be available at `http://localhost:3000`.
 
 ---
 
