@@ -24,6 +24,7 @@ import bookingRoute from "./routes/booking.routes";
 
 import { ITourDocument } from "./models/tour.model";
 import { SoftDeletetion } from "./models/plugins/softDelete.plugin";
+import { checkoutWebhook } from "./controllers/booking.controller";
 
 dotenv.config();
 
@@ -54,7 +55,16 @@ app.options("/*splat", cors());
 // MIDDLEWARES
 app.set("trust proxy", 1); //allow 1 proxy for railway deployment
 app.use("/api", apiLimiter); // limit requests from same IP
+
+// WEBHOOK
+app.use(
+  "/checkout-webhook",
+  express.raw({ type: "application/json" }),
+  checkoutWebhook,
+);
+
 app.use(helmet()); // set security HTTP headers
+
 app.use(express.json()); // body parser
 
 /**

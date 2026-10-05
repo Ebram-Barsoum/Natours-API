@@ -1,7 +1,6 @@
 import express from "express";
 import { protect, restrictTo } from "../middlewares/auth.middleware";
 import {
-  createBookingCheckout,
   deleteBooking,
   getAllBookings,
   getCheckoutSession,
@@ -18,7 +17,6 @@ const bookingRoute = express.Router();
 bookingRoute.use(protect);
 
 bookingRoute.post("/checkout-session/:tourId", getCheckoutSession);
-bookingRoute.post("/create-booking-checkout", createBookingCheckout);
 bookingRoute.get("/mine", getMyBookings);
 
 bookingRoute.use(restrictTo("admin", "lead-guide"));
